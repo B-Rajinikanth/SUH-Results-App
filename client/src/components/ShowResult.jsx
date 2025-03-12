@@ -20,7 +20,7 @@ const ShowResult = ({currentStudent}) => {
             </div>
 
             {/* Displaying Results Table */}
-            <div className='flex flex-col justify-center items-center my-5 mx-3'>
+            <div className='flex flex-col justify-center items-center my-5 px-3'>
             <table className="table-auto bg-cyan-50">
                 <tbody>
                     <tr className='bg-cyan-300 border'>
