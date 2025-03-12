@@ -7,7 +7,7 @@ const ResultForm = ({studentInfo}) => {
   const [stud, setStud] = useState([])
 
   const handleSubmission = async ()=> {
-      const currentStud = await studentInfo.filter((item)=> item.urNumber == urNumberEntered.toUpperCase())
+      const currentStud = await studentInfo.filter((item)=> item.urNumber == urNumberEntered)
       setStud(currentStud)
       if(currentStud[0]) {
         console.log(currentStud)
@@ -20,7 +20,7 @@ const ResultForm = ({studentInfo}) => {
     <div className='flex flex-col'>
         <div className='flex flex-col md:flex-row justify-center items-center gap-3 bg-green-100 p-5 rounded md:m-5 lg:p-10'>
           <label className='text-green-900 hidden md:block' htmlFor="URNumber">Enter UR Number</label>
-          <input value={urNumberEntered} onChange={(e)=>setUrNumberEntered(e.target.value)} placeholder='enter UR Number' className='bg-gray-100 border-1 border-gray-400 rounded-md w-full md:w-lg font-bold px-3 py-2 text-center' type="text" />
+          <input value={urNumberEntered} onChange={(e)=>setUrNumberEntered(e.target.value.toUpperCase())} placeholder='enter UR Number' className='bg-gray-100 border-1 border-gray-400 rounded-md w-full md:w-lg font-bold px-3 py-2 text-center' type="text" />
           <button onClick={handleSubmission} className='bg-green-800 text-white px-4 py-2 rounded-md cursor-pointer my-3 hover:bg-green-900'><i className="fa-solid fa-paper-plane"></i> &nbsp; Submit</button>
         </div>
         <div>
