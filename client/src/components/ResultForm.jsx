@@ -7,7 +7,7 @@ const ResultForm = ({studentInfo}) => {
   const [stud, setStud] = useState([])
 
   const handleSubmission = async ()=> {
-      const currentStud = await studentInfo.filter((item)=> item.urNumber == urNumberEntered)
+      const currentStud = await studentInfo.filter((item)=> item.urNumber == urNumberEntered.toUpperCase())
       setStud(currentStud)
       if(currentStud[0]) {
         console.log(currentStud)
