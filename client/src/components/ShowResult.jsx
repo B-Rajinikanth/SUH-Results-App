@@ -45,7 +45,7 @@ const ShowResult = ({currentStudent}) => {
                     }
 
                     <tr className=''>
-                        <td className='px-3 py-1 text-center border text-xl font-bold' colSpan={4}>Hello SGPA &rarr; {currentStudent.sgpa}</td>
+                        <td className='px-3 py-1 text-center border text-xl font-bold' colSpan={4}>SGPA &rarr; {currentStudent.sgpa}</td>
                     </tr>
                     
                 </tbody>
