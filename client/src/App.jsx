@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import ResultForm from './components/ResultForm'
 import HeadLine from './components/HeadLine'
+import suhShortLogo from './assets/suhShortLogo.png'
 
 function App() {
   const [students, setStudents] = useState([])
@@ -28,7 +29,12 @@ function App() {
 
   // Show loading screen until data is fetched
   if (loading) {
-    return <div className="loading-screen">Loading...</div>
+    return (
+      <div className="flex flex-col h-screen justify-center items-center loading-screen">
+        <img src={suhShortLogo} className='h-auto max-w-xs' alt="Sreenidhi University" />
+        <p className='text-green-800'>Loading...</p>
+      </div>
+    )
   }
 
   return (
