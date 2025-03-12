@@ -13,7 +13,7 @@ function App() {
 
   useEffect(()=> {
     axios
-      .get('http://localhost:5555/students')
+      .get('https://suh-results-app-server.onrender.com/students')
       .then((response)=> {
           setStudents(response.data.data);
           console.log('Data recieved!')
