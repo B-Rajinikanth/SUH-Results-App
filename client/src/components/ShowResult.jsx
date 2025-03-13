@@ -10,7 +10,7 @@ const ShowResult = ({currentStudent}) => {
             {/* Displaying Student Details */}
             <div className="flex flex-col md:flex-row gap-3 justify-between md:px-5 lg:px-10">
                 <p>Student Name: <span className='font-bold'>{currentStudent.studentName}</span></p>
-                <p>UR Number: <span className='font-bold'>{currentStudent.urNumber}</span></p>
+                <p>Register Number: <span className='font-bold'>{currentStudent.urNumber}</span></p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-3 justify-between md:px-5 lg:px-10">
@@ -20,23 +20,25 @@ const ShowResult = ({currentStudent}) => {
             </div>
 
             {/* Displaying Results Table */}
-            <div className='flex flex-col justify-center items-center my-5 px-3 mx-1'>
+            <div className='flex flex-col justify-center items-center my-5'>
             <table className="table-auto bg-cyan-50">
                 <tbody>
                     <tr className='bg-cyan-300 border'>
                         <td className='px-3 py-1 font-bold border'>Course Code</td>
                         <td className='px-3 py-1 font-bold border'>Course Title</td>
+                        <td className='px-3 py-1 font-bold border'>Credits</td>
                         <td className='px-3 py-1 font-bold border'>Result</td>
                         <td className='px-3 py-1 font-bold border'>Grade</td>
                     </tr>
 
                     {
-                        currentStudent.courses.map(item => {
+                        currentStudent.courses.map((item, index) => {
                             return(
                                 item.courseCode != "NA" && 
-                                <tr className=''>
+                                <tr key={index} className=''>
                                     <td className='px-3 py-1 text-center border'>{item.courseCode}</td>
                                     <td className='px-3 py-1 border'>{item.courseTitle}</td>
+                                    <td className='px-3 py-1 text-center border'>{item.credits}</td>
                                     <td className='px-3 py-1 text-center border'>{item.result}</td>
                                     <td className='px-3 py-1 text-center border'>{item.grade}</td>
                                 </tr>
@@ -45,7 +47,7 @@ const ShowResult = ({currentStudent}) => {
                     }
 
                     <tr className=''>
-                        <td className='px-3 py-1 text-center border text-xl font-bold' colSpan={4}>SGPA &rarr; {currentStudent.sgpa}</td>
+                        <td className='px-3 py-1 text-center border text-xl font-bold' colSpan={5}>SGPA &rarr; {currentStudent.sgpa}</td>
                     </tr>
                     
                 </tbody>
