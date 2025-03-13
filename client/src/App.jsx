@@ -32,7 +32,8 @@ function App() {
     return (
       <div className="flex flex-col h-screen justify-center items-center loading-screen">
         <img src={suhShortLogo} className='h-auto max-w-xs' alt="Sreenidhi University" />
-        <p className='text-green-800'>Loading...</p>
+        <p className='text-green-800 font-bold'>Loading...</p>
+        <p className='text-red-800 mt-2'>Please do not close, refresh, or press the back button.</p>
       </div>
     )
   }
